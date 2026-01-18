@@ -1,0 +1,959 @@
+/* ============= VARIABLES ============= */
+:root {
+  --debug: 1px dashed red;
+  --debug: none;
+
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Raleway', sans-serif;
+  --text-color-primary: rgb(67 68 85);
+  --body-bg-color: rgb(255 255 255);
+
+  --section-header-text-color: rgb(46 47 66);
+
+  --logo-primary-color: rgb(77 90 229);
+  --logo-secondary-color-header: rgb(46 47 66);
+  --logo-secondary-color-footer: rgb(244 244 253);
+
+  --nav-link-text-color: rgb(46 47 66);
+  --contact-link-text-color: rgb(67 68 85);
+  --header-link-hover-color: rgb(64 75 191);
+
+  --hero-bg-color: rgb(46 47 66);
+  --hero-bg-grad-color: rgb(46 47 66 / 0.7);
+  --hero-title-color: rgb(255 255 255);
+
+  --btn-primary-color: rgb(77 90 229);
+  --btn-primary-hover-color: rgb(64 75 191);
+  --btn-primary-text-color: rgb(255 255 255);
+
+  --approach-bg-color: rgb(255 255 255);
+  --approach-title-color: rgb(46 47 66);
+  --approach-content-color: rgb(67 68 85);
+
+  --team-bg-color: rgb(244 244 253);
+  --team-card-bg-color: rgb(255 255 255);
+  --team-title-color: rgb(46 47 66);
+  --team-content-color: rgb(67 68 85);
+  --team-social-link-bg-color: rgb(77 90 229);
+  --team-social-link-bg-color-hover: rgb(64 75 191);
+
+  --portfolio-bg-color: rgb(255 255 255);
+  --portfolio-card-title-color: rgb(46 47 66);
+  --portfolio-card-content-color: rgb(67 68 85);
+  --portfolio-thumb-bg-color: rgb(77 90 229);
+  --portfolio-text-color: rgb(244 244 253);
+
+  --footer-bg-color: rgb(46 47 66);
+  --footer-text-color: rgb(244 244 253);
+  --footer-social-title-color: rgb(255 255 255);
+  --footer-social-link-bg-color: rgb(77 90 229);
+  --footer-social-link-bg-color-hover: rgb(49 208 170);
+  --footer-subscribe-title-color: rgb(255 255 255);
+  --footer-subscribe-color: rgb(255 255 255);
+  --footer-subscribe-bg-color: rgb(77 90 229);
+  --footer-subscribe-bg-color-hover: rgb(49 208 170);
+
+  --modal-form-caption-color: rgb(46 47 66);
+}
+/* ============= /VARIABLES ============= */
+
+/* ============= COMMON STYLES ============= */
+* {
+  outline: var(--debug);
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color-primary);
+  background-color: var(--body-bg-color);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1158px;
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-header {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--section-header-text-color);
+  line-height: 1.11;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  margin-bottom: 72px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* ============= /COMMON STYLES ============= */
+
+/* ============= HEADER ============= */
+
+.page-header {
+  border-bottom: 1px solid rgb(231 233 252);
+  box-shadow:
+    0 1px 6px 0 rgb(46 47 66 / 0.08),
+    0 1px 1px 0 rgb(46 47 66 / 0.16),
+    0 2px 1px 0 rgba(46 47 66 / 0.08);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header .header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.page-header .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.page-header .contacts-list {
+  display: flex;
+  gap: 40px;
+}
+
+.logo {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--logo-primary-color);
+}
+
+.header-logo {
+  padding: 24px 0;
+  margin-right: 76px;
+}
+
+.header-logo .logo-part {
+  color: var(--logo-secondary-color-header);
+}
+
+.nav-link {
+  position: relative;
+  display: block;
+  padding: 24px 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--nav-link-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: #404bbf;
+
+  opacity: 0;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link.current::after {
+  opacity: 1;
+}
+
+.contacts {
+  font-style: normal;
+}
+
+.contacts-link {
+  display: block;
+  padding: 24px 0;
+  color: var(--contact-link-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.contacts-link:hover,
+.contacts-link:focus,
+.nav-link.current {
+  color: var(--header-link-hover-color);
+}
+
+/* ============= /HEADER ============= */
+
+/* ============= HERO ============= */
+
+.hero-section {
+  background-color: var(--hero-bg-color);
+  background-image:
+    linear-gradient(to bottom, var(--hero-bg-grad-color), var(--hero-bg-grad-color)), url('./../images/hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  text-align: center;
+  padding: 188px 0;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-title {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  color: var(--hero-title-color);
+  max-width: 496px;
+  text-align: center;
+  margin: 0 auto 48px auto;
+}
+
+.order-button {
+  display: block;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: var(--btn-primary-text-color);
+  background-color: var(--btn-primary-color);
+  cursor: pointer;
+
+  min-width: 169px;
+  height: 56px;
+  border: none;
+  margin: 0 auto;
+
+  border-radius: 4px;
+  /* padding: 16px 32px;
+  margin-top: 48px; */
+
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 0.15);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-button:hover,
+.order-button:focus {
+  background-color: var(--btn-primary-hover-color);
+}
+
+/* ============= /HERO ============= */
+
+/* ============= APPROACH ============= */
+
+.approach-section {
+  background-color: var(--approach-bg-color);
+}
+
+.approach-list {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.approach-item {
+  width: calc((100% - 3 * 24px) / 4);
+}
+
+.approach-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(142 143 153);
+  border-radius: 4px;
+  background-color: rgb(244 244 253);
+  padding: 23px 0;
+  margin-bottom: 8px;
+}
+
+.approach-title {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--approach-title-color);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin: 8px 0;
+}
+
+.approach-content {
+  color: var(--approach-content-color);
+}
+
+/* ============= /APPROACH ============= */
+
+/* ============= TEAM ============= */
+
+.team-section {
+  background-color: var(--team-bg-color);
+}
+
+.team-header {
+  line-height: 1.11;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.team-list {
+  display: flex;
+  gap: 24px;
+}
+
+.team-card {
+  background-color: var(--team-card-bg-color);
+  border-radius: 0 0 4px 4px;
+  box-shadow:
+    0 2px 1px 0 rgb(46 47 66 / 0.08),
+    0 1px 1px 0 rgb(46 47 66 / 0.16),
+    0 1px 6px 0 rgb(46 47 66 / 0.08);
+}
+
+.team-photo {
+}
+
+.team-content {
+  padding: 32px 0;
+}
+
+.team-title {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--team-title-color);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.team-position {
+  color: var(--team-content-color);
+  text-align: center;
+}
+
+.member-link-list {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.team-card .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--team-social-link-bg-color);
+  padding: 12px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-card .social-link:hover,
+.team-card .social-link:focus {
+  background-color: var(--team-social-link-bg-color-hover);
+}
+
+.team-card .social-icon {
+  fill: rgb(244 244 253);
+}
+
+/* ============= /TEAM ============= */
+
+/* ============= PORTFOLIO ============= */
+
+.portfolio-section {
+  background-color: var(--portfolio-bg-color);
+}
+
+.portfolio-header {
+  /* line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize; */
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+}
+
+.project-card {
+  width: calc((100% - 2 * 24px) / 3);
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  box-shadow:
+    0 2px 1px 0 rgb(46 47 66 / 0.08),
+    0 1px 1px 0 rgb(46 47 66 / 0.16),
+    0 1px 6px 0 rgb(46 47 66 / 0.08);
+}
+
+.card-thumb {
+  position: relative;
+  overflow: hidden;
+  /* top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--portfolio-thumb-bg-color); */
+}
+
+.card-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  padding: 40px 32px;
+
+  color: var(--portfolio-text-color);
+  background-color: var(--portfolio-thumb-bg-color);
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .card-text {
+  transform: translateY(0);
+}
+
+.card-photo {
+}
+
+.card-content {
+  padding: 32px 16px;
+  border-bottom: 1px solid rgb(231 233 252);
+  border-left: 1px solid rgb(231 233 252);
+  border-right: 1px solid rgb(231 233 252);
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--portfolio-card-title-color);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.card-type {
+  color: var(--portfolio-card-content-color);
+}
+
+/* ============= /PORTFOLIO ============= */
+
+/* ============= FOOTER ============= */
+
+.page-footer {
+  background-color: var(--footer-bg-color);
+  padding: 100px 0;
+}
+
+.page-footer .container {
+  display: flex;
+  align-items: baseline;
+}
+
+.page-footer .logo-block {
+  margin-right: 120px;
+}
+
+.page-footer .logo {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-logo .logo-part {
+  color: var(--logo-secondary-color-footer);
+}
+
+.footer-text {
+  color: var(--footer-text-color);
+  max-width: 264px;
+}
+
+.page-footer .social-title {
+  font-weight: 500;
+  color: var(--footer-social-title-color);
+  margin-bottom: 16px;
+}
+
+.page-footer .social-list {
+  display: flex;
+  gap: 16px;
+}
+
+.page-footer .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 8px;
+  background-color: var(--footer-social-link-bg-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-footer .social-link:hover,
+.page-footer .social-link:focus {
+  background-color: var(--footer-social-link-bg-color-hover);
+}
+
+.page-footer .social-icon {
+  fill: rgb(244 244 253);
+}
+
+.subscibe-block {
+  margin-left: auto;
+}
+
+.subscribe-title {
+  font-weight: 500;
+  color: var(--footer-subscribe-title-color);
+  margin-bottom: 16px;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 24px;
+}
+
+.subscribe-email {
+  color: rgb(255 255 255);
+  border: 1px solid rgb(255 255 255);
+  border-radius: 4px;
+  width: 264px;
+  height: 40px;
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: none;
+  caret-color: rgb(255 255 255);
+
+  font-size: 12px; 
+  line-height: 2;
+  letter-spacing: 0.04em;
+
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 0.15);
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-email:-webkit-autofill,
+.subscribe-email:-webkit-autofill:hover,
+.subscribe-email:-webkit-autofill:focus {
+  /* Замість кольору фону створюємо величезну внутрішню тінь вашого кольору */
+  -webkit-box-shadow: 0 0 0px 1000px var(--footer-bg-color) inset !important;
+
+  /* Встановлюємо колір тексту, який вам потрібен (наприклад, білий) */
+  -webkit-text-fill-color: rgb(255 255 255) !important;
+
+  /* Якщо хочете зберегти плавність переходу (опціонально) */
+  transition:
+    background-color 5000s ease-in-out 0s,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-email:hover,
+.subscribe-email:focus {
+  border: 1px solid rgb(49 208 170);
+}
+
+.subscribe-email::placeholder {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgb(255 255 255);
+}
+
+.subscribe-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 4px;
+  min-width: 165px;
+  height: 40px;
+  background-color: var(--footer-subscribe-bg-color);
+  color: var(--footer-subscribe-color);
+  cursor: pointer;
+
+  border: none;
+  padding: 8px 24px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: var(--footer-subscribe-bg-color-hover);
+}
+
+.subscribe-btn > .icon {
+  margin-left: 16px;
+  fill: rgb(255 255 255);
+}
+
+/* ============= /FOOTER ============= */
+
+/* ============= MODAL ============= */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(46 47 66 / 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
+  /* transform-origin: var(--order-btn-x) var(--order-btn-y); */
+
+  width: 408px;
+  min-height: 584px;
+  border-radius: 4px;
+
+  padding: 72px 24px 24px 24px;
+
+  background-color: rgb(252 252 252);
+  box-shadow:
+    0 1px 1px 0 rgb(0 0 0 / 0.14),
+    0 1px 3px 0 rgb(0 0 0 / 0.12),
+    0 2px 1px 0 rgb(0 0 0 / 0.2);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop:not(.is-open) .modal {
+  /* transform: translate(-50%, -50%) scale(1.5); */
+  transform: translate(-50%, -50%);
+}
+
+.modal-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgb(231 233 252);
+  border: 1px solid rgb(0 0 0 / 0.1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: rgb(64 75 191);
+  border: none;
+}
+
+.modal-close-btn .icon {
+  fill: rgb(46 47 66);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover .icon,
+.modal-close-btn:focus .icon {
+  fill: rgb(255 255 255);
+}
+
+.modal .form-caption {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--modal-form-caption-color);
+  margin-bottom: 16px;
+}
+
+.modal-form {
+}
+
+.modal-form .field {
+  margin-bottom: 8px;
+}
+
+.modal-form .field-label {
+  display: block;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgb(142 143 153);
+
+  margin-bottom: 4px;
+}
+
+.modal-form .field-input {
+  position: relative;
+}
+
+.modal-form .field-input input {
+  width: 100%;
+  height: 40px;
+
+  background-color: transparent;
+
+  padding-left: 38px;
+
+  outline: transparent;
+  border: 1px solid rgb(46 47 66 / 0.4);
+  border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form textarea {
+  width: 100%;
+  height: 120px;
+
+  padding: 8px 16px;
+
+  background-color: transparent;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgb(46 47 66 / 0.4);
+
+  outline: transparent;
+  border: 1px solid rgb(46 47 66 / 0.4);
+  border-radius: 4px;
+
+  resize: none;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form textarea::placeholder {
+  color: rgb(46 47 66 / 0.4);
+}
+
+.modal-form .field-input input:focus,
+.modal-form textarea:focus {
+  border-color: rgb(77 90 229);
+}
+
+.modal-form .field-input input + .icon {
+  fill: rgb(46 47 66);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form .field-input input:focus + .icon {
+  fill: rgb(77 90 229);
+}
+
+.modal-form .field-input .icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  fill: rgb(46 47 66);
+}
+
+.modal-form .field.comment {
+  margin-bottom: 16px;
+}
+
+.modal-form .field.privacy {
+  margin-bottom: 24px;
+}
+
+.modal-form .user-privacy {
+
+}
+
+
+
+
+
+.modal-form input[type='checkbox'] + label > span {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+
+  fill: transparent; 
+
+  border-radius: 2px;
+  border: 1px solid rgb(46 47 66 / 0.4);
+  margin-right: 8px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.modal-form input[type='checkbox'] + label .icon {
+  width: 10px;
+  height: 8px;
+  fill: transparent;
+
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form input[type='checkbox']:checked + label > span {
+  border: none;
+  background-color: rgb(64 75 191);
+  fill: rgb(244 244 253);
+}
+
+.modal-form input[type='checkbox']:checked + label .icon {
+  fill: rgb(244 244 253);
+}
+
+
+.modal-form .link {
+  line-height: 1.33;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: rgb(77 90 229);
+}
+
+.modal-form .submit-btn {
+  display: block;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  border-radius: 4px;
+  padding: 16px 32px;
+  min-width: 169px;
+  height: 56px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: rgb(77 90 229);
+  color: rgb(255 255 255);
+  border: none;
+
+  cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form .submit-btn:hover,
+.modal-form .submit-btn:focus {
+  background-color: rgb(64 75 191);
+}
+/* ============= /MODAL ============= */
