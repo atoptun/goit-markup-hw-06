@@ -20,6 +20,10 @@
       rel="stylesheet"
     />
 
+    <!-- LOCAL -->
+    <!-- <link rel="stylesheet" href="./css/modern-normalize.3.0.1.min.css" />
+    <link rel="stylesheet" href="./css/fonts.css" /> -->
+
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
@@ -32,8 +36,12 @@
             <li class="nav-item">
               <a class="nav-link current" href="./index.html">Studio</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Contacts</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Contacts</a>
+            </li>
           </ul>
         </nav>
 
@@ -42,9 +50,81 @@
             <li class="contacts-item">
               <a class="contacts-link" href="mailto:info@devstudio.com">info@devstudio.com</a>
             </li>
-            <li class="contacts-item"><a class="contacts-link" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
+            <li class="contacts-item">
+              <a class="contacts-link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+            </li>
           </ul>
         </address>
+
+        <button class="burger-btn" type="button" data-mobile-menu-open>
+          <svg class="burger-icon" width="24" height="24">
+            <use href="./images/icons.svg#burger" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-menu" data-mobile-menu>
+        <div class="container mobile-menu-container">
+          <button class="mobile-menu-close-btn" type="button" data-mobile-menu-close>
+            <svg class="mobile-menu-close-icon" width="8" height="8">
+              <use href="./images/icons.svg#close-modal" />
+            </svg>
+          </button>
+          <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+              <li class="mobile-nav-item">
+                <a class="mobile-nav-link current" href="./index.html">Studio</a>
+              </li>
+              <li class="mobile-nav-item">
+                <a class="mobile-nav-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="mobile-nav-item">
+                <a class="mobile-nav-link" href="./index.html">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+
+          <address class="mobile-contacts">
+            <ul class="mobile-contact-list">
+              <li class="mobile-contact-item">
+                <a class="mobile-contact-link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+              </li>
+              <li class="mobile-contact-item">
+                <a class="mobile-contact-link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+              </li>
+            </ul>
+          </address>
+          <ul class="mobile-social-list">
+            <li class="mobile-social-item">
+              <a href="" class="mobile-social-link">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a href="" class="mobile-social-link">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a href="" class="mobile-social-link">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a href="" class="mobile-social-link">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -113,7 +193,25 @@
           <h2 class="section-header team-header">Our Team</h2>
           <ul class="team-list">
             <li class="team-card">
-              <img class="team-photo" src="./images/team/team-img-1.jpg" alt="Mark Guerrero" width="264" />
+              <picture>
+                <source
+                  srcset="./images/team/avif/team-img-1.avif 1x, ./images/team/avif/team-img-1@2x.avif 2x"
+                  type="image/avif"
+                />
+                <source
+                  srcset="./images/team/webp/team-img-1.webp 1x, images/team/webp/team-img-1@2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  class="team-photo"
+                  src="./images/team/team-img-1.jpg"
+                  srcset="./images/team/team-img-1.jpg 1x, ./images/team/team-img-1@2x.jpg 2x"
+                  alt="Mark Guerrero"
+                  width="264"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div class="team-content">
                 <h3 class="team-title">Mark Guerrero</h3>
                 <p class="team-position">Product Designer</p>
@@ -150,7 +248,25 @@
               </div>
             </li>
             <li class="team-card">
-              <img class="team-photo" src="./images/team/team-img-2.jpg" alt="Tom Ford" width="264" />
+              <picture>
+                <source
+                  srcset="./images/team/avif/team-img-2.avif 1x, ./images/team/avif/team-img-2@2x.avif 2x"
+                  type="image/avif"
+                />
+                <source
+                  srcset="./images/team/webp/team-img-2.webp 1x, images/team/webp/team-img-2@2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  class="team-photo"
+                  src="./images/team/team-img-2.jpg"
+                  srcset="./images/team/team-img-2.jpg 1x, ./images/team/team-img-2@2x.jpg 2x"
+                  alt="Tom Ford"
+                  width="264"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div class="team-content">
                 <h3 class="team-title">Tom Ford</h3>
                 <p class="team-position">Frontend Developer</p>
@@ -187,7 +303,25 @@
               </div>
             </li>
             <li class="team-card">
-              <img class="team-photo" src="./images/team/team-img-3.jpg" alt="Camila Garcia" width="264" />
+              <picture>
+                <source
+                  srcset="./images/team/avif/team-img-3.avif 1x, ./images/team/avif/team-img-3@2x.avif 2x"
+                  type="image/avif"
+                />
+                <source
+                  srcset="./images/team/webp/team-img-3.webp 1x, images/team/webp/team-img-3@2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  class="team-photo"
+                  src="./images/team/team-img-3.jpg"
+                  srcset="./images/team/team-img-3.jpg 1x, ./images/team/team-img-3@2x.jpg 2x"
+                  alt="Camila Garcia"
+                  width="264"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div class="team-content">
                 <h3 class="team-title">Camila Garcia</h3>
                 <p class="team-position">Marketing</p>
@@ -224,7 +358,25 @@
               </div>
             </li>
             <li class="team-card">
-              <img class="team-photo" src="./images/team/team-img-4.jpg" alt="Daniel Wilson" width="264" />
+              <picture>
+                <source
+                  srcset="./images/team/avif/team-img-4.avif 1x, ./images/team/avif/team-img-4@2x.avif 2x"
+                  type="image/avif"
+                />
+                <source
+                  srcset="./images/team/webp/team-img-4.webp 1x, images/team/webp/team-img-4@2x.webp 2x"
+                  type="image/webp"
+                />
+                <img
+                  class="team-photo"
+                  src="./images/team/team-img-4.jpg"
+                  srcset="./images/team/team-img-4.jpg 1x, ./images/team/team-img-4@2x.jpg 2x"
+                  alt="Daniel Wilson"
+                  width="264"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div class="team-content">
                 <h3 class="team-title">Daniel Wilson</h3>
                 <p class="team-position">UI Designer</p>
@@ -264,13 +416,111 @@
         </div>
       </section>
 
-      <section class="section portfolio-section">
+      <section class="section portfolio-section" id="portfolio">
         <div class="container">
           <h2 class="section-header portfolio-header">Our Portfolio</h2>
           <ul class="project-list">
             <li class="project-card">
               <div class="card-thumb">
-                <img class="card-photo" src="./images/portfolio/portfolio-img-1.jpg" alt="Banking App" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-1-desktop.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-1-desktop@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-1-desktop.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-1-desktop@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-1-desktop.jpg    1x,
+                      ./images/portfolio/portfolio-img-1-desktop@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <!-- Tablet -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-1-tablet.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-1-tablet@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-1-tablet.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-1-tablet@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-1-tablet.jpg    1x,
+                      ./images/portfolio/portfolio-img-1-tablet@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <!-- Mobile -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-1-mobile.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-1-mobile@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-1-mobile.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-1-mobile@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+
+                  <img
+                    class="team-photo"
+                    src="./images/portfolio/portfolio-img-1-mobile.jpg"
+                    srcset="
+                      ./images/portfolio/portfolio-img-1-mobile.jpg    1x,
+                      ./images/portfolio/portfolio-img-1-mobile@2x.jpg 2x
+                    "
+                    alt="Banking App"
+                    width="288"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p class="card-text">
                   14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
                   Fruit Ecommerce App · Cloud Storage App
@@ -283,12 +533,105 @@
             </li>
             <li class="project-card">
               <div class="card-thumb">
-                <img
-                  class="card-photo"
-                  src="./images/portfolio/portfolio-img-2.jpg"
-                  alt="Cashless Payment"
-                  width="360"
-                />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-2-desktop.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-2-desktop@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-2-desktop.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-2-desktop@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-2-desktop.jpg    1x,
+                      ./images/portfolio/portfolio-img-2-desktop@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <!-- Tablet -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-2-tablet.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-2-tablet@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-2-tablet.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-2-tablet@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-2-tablet.jpg    1x,
+                      ./images/portfolio/portfolio-img-2-tablet@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <!-- Mobile -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-2-mobile.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-2-mobile@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-2-mobile.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-2-mobile@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+
+                  <img
+                    class="team-photo"
+                    src="./images/portfolio/portfolio-img-2-mobile.jpg"
+                    srcset="
+                      ./images/portfolio/portfolio-img-2-mobile.jpg    1x,
+                      ./images/portfolio/portfolio-img-2-mobile@2x.jpg 2x
+                    "
+                    alt="Cashless Payment"
+                    width="288"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p class="card-text">
                   14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
                   Fruit Ecommerce App · Cloud Storage App
@@ -301,7 +644,105 @@
             </li>
             <li class="project-card">
               <div class="card-thumb">
-                <img class="card-photo" src="./images/portfolio/portfolio-img-3.jpg" alt="Meditation App" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-3-desktop.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-3-desktop@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-3-desktop.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-3-desktop@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-3-desktop.jpg    1x,
+                      ./images/portfolio/portfolio-img-3-desktop@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <!-- Tablet -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-3-tablet.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-3-tablet@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-3-tablet.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-3-tablet@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-3-tablet.jpg    1x,
+                      ./images/portfolio/portfolio-img-3-tablet@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <!-- Mobile -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-3-mobile.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-3-mobile@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-3-mobile.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-3-mobile@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+
+                  <img
+                    class="team-photo"
+                    src="./images/portfolio/portfolio-img-3-mobile.jpg"
+                    srcset="
+                      ./images/portfolio/portfolio-img-3-mobile.jpg    1x,
+                      ./images/portfolio/portfolio-img-3-mobile@2x.jpg 2x
+                    "
+                    alt="Meditation App"
+                    width="288"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p class="card-text">
                   14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
                   Fruit Ecommerce App · Cloud Storage App
@@ -314,7 +755,105 @@
             </li>
             <li class="project-card">
               <div class="card-thumb">
-                <img class="card-photo" src="./images/portfolio/portfolio-img-4.jpg" alt="Taxi Service" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-4-desktop.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-4-desktop@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-4-desktop.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-4-desktop@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-4-desktop.jpg    1x,
+                      ./images/portfolio/portfolio-img-4-desktop@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <!-- Tablet -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-4-tablet.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-4-tablet@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-4-tablet.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-4-tablet@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-4-tablet.jpg    1x,
+                      ./images/portfolio/portfolio-img-4-tablet@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <!-- Mobile -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-4-mobile.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-4-mobile@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-4-mobile.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-4-mobile@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+
+                  <img
+                    class="team-photo"
+                    src="./images/portfolio/portfolio-img-4-mobile.jpg"
+                    srcset="
+                      ./images/portfolio/portfolio-img-4-mobile.jpg    1x,
+                      ./images/portfolio/portfolio-img-4-mobile@2x.jpg 2x
+                    "
+                    alt="Taxi Service"
+                    width="288"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p class="card-text">
                   14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
                   Fruit Ecommerce App · Cloud Storage App
@@ -327,12 +866,105 @@
             </li>
             <li class="project-card">
               <div class="card-thumb">
-                <img
-                  class="card-photo"
-                  src="./images/portfolio/portfolio-img-5.jpg"
-                  alt="Screen Illustrations"
-                  width="360"
-                />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-5-desktop.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-5-desktop@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-5-desktop.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-5-desktop@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-5-desktop.jpg    1x,
+                      ./images/portfolio/portfolio-img-5-desktop@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <!-- Tablet -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-5-tablet.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-5-tablet@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-5-tablet.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-5-tablet@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-5-tablet.jpg    1x,
+                      ./images/portfolio/portfolio-img-5-tablet@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <!-- Mobile -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-5-mobile.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-5-mobile@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-5-mobile.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-5-mobile@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+
+                  <img
+                    class="team-photo"
+                    src="./images/portfolio/portfolio-img-5-mobile.jpg"
+                    srcset="
+                      ./images/portfolio/portfolio-img-5-mobile.jpg    1x,
+                      ./images/portfolio/portfolio-img-5-mobile@2x.jpg 2x
+                    "
+                    alt="Screen Illustrations"
+                    width="288"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p class="card-text">
                   14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
                   Fruit Ecommerce App · Cloud Storage App
@@ -345,7 +977,105 @@
             </li>
             <li class="project-card">
               <div class="card-thumb">
-                <img class="card-photo" src="./images/portfolio/portfolio-img-6.jpg" alt="Online Courses" width="360" />
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-6-desktop.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-6-desktop@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-6-desktop.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-6-desktop@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-6-desktop.jpg    1x,
+                      ./images/portfolio/portfolio-img-6-desktop@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 1158px)"
+                    width="360"
+                    height="300"
+                  />
+                  <!-- Tablet -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-6-tablet.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-6-tablet@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-6-tablet.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-6-tablet@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/portfolio-img-6-tablet.jpg    1x,
+                      ./images/portfolio/portfolio-img-6-tablet@2x.jpg 2x
+                    "
+                    type="image/jpeg"
+                    media="(min-width: 768px)"
+                    width="356"
+                    height="300"
+                  />
+                  <!-- Mobile -->
+                  <source
+                    srcset="
+                      ./images/portfolio/avif/portfolio-img-6-mobile.avif    1x,
+                      ./images/portfolio/avif/portfolio-img-6-mobile@2x.avif 2x
+                    "
+                    type="image/avif"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/webp/portfolio-img-6-mobile.webp    1x,
+                      ./images/portfolio/webp/portfolio-img-6-mobile@2x.webp 2x
+                    "
+                    type="image/webp"
+                    media="(max-width: 767px)"
+                    width="288"
+                    height="280"
+                  />
+
+                  <img
+                    class="team-photo"
+                    src="./images/portfolio/portfolio-img-6-mobile.jpg"
+                    srcset="
+                      ./images/portfolio/portfolio-img-6-mobile.jpg    1x,
+                      ./images/portfolio/portfolio-img-6-mobile@2x.jpg 2x
+                    "
+                    alt="Online Courses"
+                    width="288"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p class="card-text">
                   14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
                   Fruit Ecommerce App · Cloud Storage App
@@ -405,16 +1135,15 @@
         <div class="subscibe-block">
           <p class="subscribe-title">Subscribe</p>
           <form action="index.html" method="get" class="subscribe-form">
-            <label class="subscribe-user-email-label">
-              <input
-                type="email"
-                name="user-email"
-                id="subscribe_user_email"
-                class="subscribe-email"
-                placeholder="E-mail"
-                spellcheck="false"
-              />
-            </label>
+            <label class="subscribe-user-email-label visually-hidden" for="subscribe_user_email"> User email </label>
+            <input
+              type="email"
+              name="user_email"
+              id="subscribe_user_email"
+              class="subscribe-email"
+              placeholder="E-mail"
+              spellcheck="false"
+            />
             <button class="subscribe-btn" type="submit">
               Subscribe
               <svg class="icon" width="24" height="24">
@@ -465,20 +1194,28 @@
           <div class="field comment">
             <label for="user-comment" class="field-label">Comment</label>
             <!-- <div class="field-input"> -->
-              <textarea class="user-comment" name="user-comment" id="user-comment" placeholder="Text input"></textarea>
+            <textarea class="user-comment" name="user-comment" id="user-comment" placeholder="Text input"></textarea>
             <!-- </div> -->
           </div>
           <div class="field privacy">
             <!-- <div class="field-checkbox"> -->
-              <input type="checkbox" class="user-privacy visually-hidden" name="user-privacy" id="user-privacy" value="true" />
-              <label for="user-privacy" class="field-label">
-                <span class="checkbox">
-                  <svg class="icon" width="10" height="8">
-                    <use href="./images/icons.svg#checkbox"></use>
-                  </svg>
-                </span>
-                I accept the terms and conditions of the  <a class="link" href="">Privacy Policy</a>
-              </label>
+            <input
+              type="checkbox"
+              class="user-privacy visually-hidden"
+              name="user-privacy"
+              id="user-privacy"
+              value="true"
+            />
+            <label for="user-privacy" class="field-label field-label-privacy">
+              <span class="checkbox">
+                <svg class="icon" width="10" height="8">
+                  <use href="./images/icons.svg#checkbox"></use>
+                </svg>
+              </span>
+              <span class="text">
+                I accept the terms and conditions of the <a class="link" href="">Privacy Policy</a>
+              </span>
+            </label>
             <!-- </div> -->
           </div>
           <button type="submit" class="submit-btn">Send</button>
@@ -487,5 +1224,6 @@
     </div>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
