@@ -1099,6 +1099,7 @@
     }
     .container {
       flex-wrap: nowrap;
+      gap: unset;
       padding-left: 16px;
       padding-right: 16px;
     }
@@ -1314,6 +1315,7 @@
 
   .modal-form input[type='checkbox'] + label > .checkbox {
     display: inline-flex;
+    flex: 0 0 16px;
     width: 16px;
     height: 16px;
     align-items: center;
